@@ -4,9 +4,11 @@ import Footer from "./components/layout/Footer"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import NotFound from "./pages/NotFound"
+import User from "./pages/User"
 import { GitHubProvider } from "./context/github/GithubContext"
 import {AlertProvider} from "./context/alert/AlertContext"
 import Alert from "./components/layout/Alert"
+
 
 function App() {
   return (
@@ -19,9 +21,10 @@ function App() {
               <Alert />
               <swich>
                 <Routes>
-                  <Route path="/" element={<Home />} />
+                  <Route exact path="/" element={<Home />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/notFound" element={<NotFound />} />
+                  <Route path="/user/:login" element={<User /> } />
                   <Route path="/*" element={<NotFound />} />
                 </Routes> 
               </swich>
